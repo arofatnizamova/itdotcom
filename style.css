@@ -469,6 +469,7 @@ a:hover .card-arrow {
     width: 17px;
 }
 
+
 @keyframes arrow-move {
     0% {
         transform: translateX(0);
