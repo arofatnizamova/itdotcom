@@ -12,13 +12,13 @@ $(document).ready(function () {
 
         let extraOptions = {};
 
-        if (slider.hasClass('products')) {
+        if (slider.hasClass('advantages')) {
             extraOptions = {
-                slidesToShow: 4,
+                slidesToShow: 3.5,
                 slidesToScroll: 1,
                 centerMode: false,
                 arrows: true,
-                dots: false,
+                dots: true,
                 autoplay: true,
                 responsive: [
                     {
