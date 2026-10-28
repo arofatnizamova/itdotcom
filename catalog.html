@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itdotcom</title>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" media="all">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header-light">
+        <div class="bg-main py-5 lg:d-block d-none">
+            <div class="container">
+                <div class="row">
+                    <div class="lg:col-6">
+                        <div class="w-100 h-100">
+                            <div class="row justify-content-between align-items-center h-100">
+                                <div class="lg:col-5">
+                                    <a href="tel:+998712007744" class="d-flex align-items-center gap-4">
+                                        <i class="bi bi-telephone-fill text-corp"></i>
+                                        <span class="text-corp-2 fw-medium">+998712007744</span>
+                                    </a>
+                                </div>
+                                <div class="lg:col-7">
+                                    <a href="mailto:info@serviceyou.uz" class="d-flex align-items-center gap-4">
+                                        <i class="bi bi-envelope-fill text-corp"></i>
+                                        <span class="text-corp-2 fw-medium">info@serviceyou.uz</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-6">
+                        <div class="w-100">
+                            <div class="row justify-content-end align-items-center">
+                                <div class="lg:col-4">
+                                    <div class="w-100 d-flex justify-content-end">
+                                        <ul class="list-unstyled lg:d-flex d-none gap-4 mb-0 me-4 fs-sm">
+                                            <li>
+                                                <a href="#" class="icons-circle d-flex align-items-center position-relative">
+                                                    <i class="bi bi-facebook icon-social position-absolute"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="icons-circle d-flex align-items-center position-relative">
+                                                    <i class="bi bi-instagram icon-social position-absolute"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="icons-circle d-flex align-items-center position-relative">
+                                                    <i class="bi bi-twitter icon-social position-absolute"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="icons-circle d-flex align-items-center position-relative">
+                                                    <i class="bi bi-youtube icon-social position-absolute"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="lg:col-4">
+                                    <div class="w-100 d-flex justify-content-end">
+                                        <button class="border-0 bg-transparent d-flex align-items-center text-corp-2 fw-medium" type="button" data-bs-toggle="menu" aria-expanded="false">
+                                            <span class="rounded-flag overflow-hidden me-3"><span class="fi fi-ru fs-lg"></span></span> Русский <i class="bi bi-chevron-down fs-xs ms-2"></i>
+                                        </button>
+                                        <div class="menu">
+                                            <a class="menu-item" href="#">Английский</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar lg:navbar-expand position-absolute w-100 z-3 bg-transparent">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img src="icons/main-icons/logo-dark.svg" alt="Itdotcom logo" class="logo">
+                </a>
+                <div class="lg:d-none  d-flex align-items-center gap-3">
+                    <a href="tel:+998712007050"><i class="bi bi-telephone-fill text-corp-2"></i></a>
+                    <div class="">
+                        <button class="border-0 bg-transparent text-corp-2 d-flex align-items-center  fw-medium" type="button" data-bs-toggle="menu" aria-expanded="false">
+                            <span class="rounded-flag overflow-hidden me-3"><span class="fi fi-ru fs-lg"></span></span> RU <i class="bi bi-chevron-down fs-xs ms-2"></i>
+                        </button>
+                        <div class="menu">
+                            <a class="menu-item" href="#">Английский</a>
+                        </div>
+                    </div>
+                    <button class="btn-icon navbar-toggler bg-white" type="button" data-bs-toggle="drawer" data-bs-target="#navbarDrawer" aria-controls="navbarDrawer" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon " aria-hidden="true"></span>
+                    </button>
+                </div>
+                <dialog class="drawer drawer-end" tabindex="-1" id="navbarDrawer" aria-labelledby="navbarDrawerLabel">
+                    <div class="drawer-header">
+                        <h5 class="drawer-title" id="navbarDrawerLabel">Меню</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Close"></button>
+                    </div>
+                    <div class="drawer-body mb-2 md:mb-0">
+                        <ul class="nav navbar-nav lg:ms-auto 2xl:gap-10 me-5">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="about.html">О компании</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="catalog.html">Каталог</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="vendors.html">Вендоры</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#partnership">Сотрудничество</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="news.html">Новости</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contacts.html">Контакты</a>
+                            </li>
+                        </ul>
+                        <a href="tel:+998712007050" class="nav-link 2xl:d-block d-none">+998(71) 200-70-50</a>
+                    </div>
+                </dialog>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="py-10">
+            <div class="container py-10">
+                <div class="py-10 row">
+                    <div class="lg:col-8">
+                        <h3 class="lg:text-start text-center fs-3xl text-uppercase text-corp fw-light">
+                            Разработка
+                        </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="lg:col-4">
+                        <div class="w-100 bg-main p-5 rounded-6">
+                            <div class="row">
+                                <div class="lg:col-9">
+                                    <div class="accordion accordion-gap">
+                                        <details class="accordion-item" name="accordionExample" open>
+                                            <summary class="accordion-header">
+                                                Разработка
+                                                <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <path d="m2 5 6 6 6-6" />
+                                                </svg>
+                                            </summary>
+                                            <div class="accordion-body">
+                                                <ul class="list-unstyled text-xs fw-light opacity-75">
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            Разработка
+                                                        </a>
+                                                    </li>
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            Контейниризация/Микросервисы
+                                                        </a>
+                                                    </li>
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            Гибкое управление жизненным циклом
+                                                        </a>
+                                                    </li>
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            DevOps
+                                                        </a>
+                                                    </li>
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            Машинное обучение
+                                                        </a>
+                                                    </li>
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            Сотрудничество
+                                                        </a>
+                                                    </li>
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            Мониторинг
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </details>
+                                        <details class="accordion-item" name="accordionExample">
+                                            <summary class="accordion-header">
+                                                Инфрастуктура
+                                                <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <path d="m2 5 6 6 6-6" />
+                                                </svg>
+                                            </summary>
+                                            <div class="accordion-body">
+                                                <ul class="list-unstyled text-xs fw-light opacity-75">
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            Разработка
+                                                        </a>
+                                                    </li>
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            Контейниризация/Микросервисы
+                                                        </a>
+                                                    </li>
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            Гибкое управление жизненным циклом
+                                                        </a>
+                                                    </li>
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            DevOps
+                                                        </a>
+                                                    </li>
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            Машинное обучение
+                                                        </a>
+                                                    </li>
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            Сотрудничество
+                                                        </a>
+                                                    </li>
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            Мониторинг
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </details>
+                                        <details class="accordion-item" name="accordionExample">
+                                            <summary class="accordion-header">
+                                                Безопасность
+                                                <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <path d="m2 5 6 6 6-6" />
+                                                </svg>
+                                            </summary>
+                                            <div class="accordion-body">
+                                                <ul class="list-unstyled text-xs fw-light opacity-75">
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            Разработка
+                                                        </a>
+                                                    </li>
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            Контейниризация/Микросервисы
+                                                        </a>
+                                                    </li>
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            Гибкое управление жизненным циклом
+                                                        </a>
+                                                    </li>
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            DevOps
+                                                        </a>
+                                                    </li>
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            Машинное обучение
+                                                        </a>
+                                                    </li>
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            Сотрудничество
+                                                        </a>
+                                                    </li>
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            Мониторинг
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </details>
+                                        <details class="accordion-item" name="accordionExample">
+                                            <summary class="accordion-header">
+                                                Бизнес
+                                                <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <path d="m2 5 6 6 6-6" />
+                                                </svg>
+                                            </summary>
+                                            <div class="accordion-body">
+                                                <ul class="list-unstyled text-xs fw-light opacity-75">
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            Разработка
+                                                        </a>
+                                                    </li>
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            Контейниризация/Микросервисы
+                                                        </a>
+                                                    </li>
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            Гибкое управление жизненным циклом
+                                                        </a>
+                                                    </li>
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            DevOps
+                                                        </a>
+                                                    </li>
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            Машинное обучение
+                                                        </a>
+                                                    </li>
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            Сотрудничество
+                                                        </a>
+                                                    </li>
+                                                    <li class="mb-4">
+                                                        <a href="#">
+                                                            Мониторинг
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </details>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-8">
+                        <div class="w-100">
+                            <div class="w-100 bg-main mb-5 p-5 rounded-8">
+                                <div class="row">
+                                    <div class="lg:col-2">
+                                        <img src="images/catalog-page/1.svg" alt="" class="img-fluid w-100 object-fit-cover">
+                                    </div>
+                                    <div class="lg:col-10">
+                                        <div class="w-100">
+                                            <h5 class="fw-semibold text-sm">
+                                                AES Drive
+                                            </h5>
+                                            <p class="mt-4 fs-md fw-light opacity-75">
+                                                Простая в использовании утилита, которая обеспечивает надежное шифрование файлов на диске. Расшифрованные файлы всегда доступны вам, но при этом
+                                                остаются зашифрованными на диске
+                                            </p>
+                                            <div class="text-end mt-auto">
+                                                <a href="catalog-item.html" class="text-corp text-xs">
+                                                    Читать больше <i class="bi bi-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-100 bg-main mb-5 p-5 rounded-8">
+                                <div class="row">
+                                    <div class="lg:col-2">
+                                        <img src="images/catalog-page/1.svg" alt="" class="img-fluid w-100 object-fit-cover">
+                                    </div>
+                                    <div class="lg:col-10">
+                                        <div class="w-100">
+                                            <h5 class="fw-semibold text-sm">
+                                                AES Drive
+                                            </h5>
+                                            <p class="mt-4 fs-md fw-light opacity-75">
+                                                Простая в использовании утилита, которая обеспечивает надежное шифрование файлов на диске. Расшифрованные файлы всегда доступны вам, но при этом
+                                                остаются зашифрованными на диске
+                                            </p>
+                                            <div class="text-end mt-auto">
+                                                <a href="catalog-item.html" class="text-corp text-xs">
+                                                    Читать больше <i class="bi bi-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-100 bg-main mb-5 p-5 rounded-8">
+                                <div class="row">
+                                    <div class="lg:col-2">
+                                        <img src="images/catalog-page/1.svg" alt="" class="img-fluid w-100 object-fit-cover">
+                                    </div>
+                                    <div class="lg:col-10">
+                                        <div class="w-100">
+                                            <h5 class="fw-semibold text-sm">
+                                                AES Drive
+                                            </h5>
+                                            <p class="mt-4 fs-md fw-light opacity-75">
+                                                Простая в использовании утилита, которая обеспечивает надежное шифрование файлов на диске. Расшифрованные файлы всегда доступны вам, но при этом
+                                                остаются зашифрованными на диске
+                                            </p>
+                                            <div class="text-end mt-auto">
+                                                <a href="catalog-item.html" class="text-corp text-xs">
+                                                    Читать больше <i class="bi bi-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-corp py-10 text-white">
+        <div class="container lg:py-10">
+            <div class="row gy-10">
+                <div class="lg:col-3">
+                    <img src="icons/main-icons/logo.svg" alt="" class="img-fluid">
+                </div>
+                <div class="lg:col-8">
+                    <div class="w-100">
+                        <ul class="d-flex lg:flex-row flex-column lg:align-items-center lg:gap-0 gap-5 text-uppercase justify-content-between fs-md mb-10 pb-10 border-bottom fw-bold list-unstyled">
+                            <li>
+                                <a href="about.html">
+                                    О компании
+                                </a>
+                            </li>
+                            <li>
+                                <a href="vendors.html">
+                                    вендоры
+                                </a>
+                            </li>
+                            <li>
+                                <a href="contacts.html">
+                                    сотрудничество
+                                </a>
+                            </li>
+                            <li>
+                                <a href="news.html">
+                                    новости
+                                </a>
+                            </li>
+                            <li>
+                                <a href="contacts.html">
+                                    Контакты
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="d-flex lg:flex-row flex-column lg:align-items-center justify-content-between">
+                            <div class="d-flex lg:flex-row flex-column lg:align-items-center lg:mb-0 mb-10 gap-5">
+                                <address class="d-flex align-items-center gap-4 mb-0">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <span>100125, г. Ташкент,ул. БУЗ-2, д.4м</span>
+                                </address>
+                                <a href="tel:+998712007050" class="d-flex align-items-center gap-4">
+                                    <i class="bi bi-telephone-fill"></i>
+                                    <span>+99871 200-70-50</span>
+                                </a>
+                            </div>
+                            <ul class="d-flex align-items-center lg:justify-content-start justify-content-center gap-8 fs-2xl list-unstyled">
+                                <li>
+                                    <a href="#">
+                                        <i class="bi bi-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="bi bi-instagram"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="bi bi-telegram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js "></script>
+    <script src="https://kit.fontawesome.com/f817facf9f.js " crossorigin="anonymous "></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js "></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
