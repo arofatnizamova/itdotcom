@@ -356,14 +356,14 @@ header {
 }
 
 .form-control {
-    background: #F3EAE2;
+    background: #F8F8F8;
     border: none;
     border-radius: 30px;
     padding: 10px 20px;
 }
 
 .form-control::placeholder {
-    color: #BDA26D;
+    color: #676767;
 }
 
 .form-control.combobox-toggle {
@@ -413,6 +413,10 @@ header {
 
 .icon-size-xs {
     height: 50px;
+}
+
+.icon-size-2xs {
+    height: 30px;
 }
 
 a:hover .card-arrow {
@@ -481,6 +485,14 @@ a:hover .card-arrow {
     right: 0;
     width: 60%;
     border-radius: 20px 0px 0px 20px;
+}
+
+.line-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 @keyframes arrow-move {
