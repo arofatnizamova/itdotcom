@@ -514,6 +514,64 @@ a:hover .card-arrow {
     border-radius: 0.75rem !important;
     box-shadow: none;
 }
+/* Полноширинное меню под navbar */
+.catalog-mega {
+    top: 100%;
+    left: 0;
+    z-index: 1050;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Скрытие, в том числе при наличии lg:d-block */
+.catalog-mega[hidden] {
+    display: none !important;
+}
+
+/* Табы слева */
+.catalog-mega .nav-pills .nav-link {
+    width: 100%;
+    text-align: start;
+    padding: 8px 12px;
+    color: black !important;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 6px !important;
+    background: transparent;
+    font-weight: 400;
+    height: fit-content !important;
+    font-size: 14px;
+    justify-content: start;
+}
+.catalog-mega .nav-pills{
+    border-radius: 0;
+    background: transparent;
+}
+.catalog-mega .nav-pills .nav-link.active {
+    color: #fff !important;
+    background: var(--color-corp);
+    border-color: var(--color-corp);
+}
+
+/* Ссылки внутри каталога */
+.catalog-mega .tab-content a {
+    color: #888;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s ease;
+}
+
+.catalog-mega .tab-content a:hover {
+    color: var(--color-corp);
+}
+
+/* Карточки продуктов */
+.catalog-mega .catalog-product {
+    color: var(--color-corp);
+    transition: border-color 0.2s ease;
+}
+
+.catalog-mega .catalog-product:hover {
+    border-color: var(--color-corp) !important;
+}
 
 @keyframes arrow-move {
     0% {
@@ -534,6 +592,9 @@ a:hover .card-arrow {
 }
 
 @media(max-width: 990px) {
+    .catalog-mega {
+        display: none !important;
+    }
     .w-lg-fit-content {
         width: 100%;
     }

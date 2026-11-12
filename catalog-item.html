@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -113,7 +113,18 @@
                                 <a class="nav-link active" aria-current="page" href="about.html">О компании</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="catalog.html">Каталог</a>
+                                <button
+                                    class="nav-link lg:d-block d-none"
+                                    type="button"
+                                    id="catalogMegaToggle"
+                                    aria-expanded="false"
+                                    aria-controls="catalogMegaMenu"
+                                >
+                                    Каталог
+                                </button>
+                                <a class="nav-link lg:d-none" href="catalog.html">
+                                    Каталог
+                                </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="vendors.html">Вендоры</a>
@@ -132,6 +143,225 @@
                     </div>
                 </dialog>
             </div>
+            <div id="catalogMegaMenu"
+                    class="catalog-mega position-absolute w-100 bg-main lg:d-block d-none"
+                    aria-label="Разделы каталога"
+                    hidden>
+
+                    <div class="container py-5">
+                        <div class="row g-5">
+
+                            <!-- Левая колонка: табы -->
+                            <div class="lg:col-2">
+                                <div class="nav nav-pills nav-pills-vertical gap-2"
+                                    id="catalogTabs"
+                                    role="tablist"
+                                    aria-orientation="vertical">
+
+                                    <button class="nav-link active"
+                                            id="development-tab"
+                                            data-bs-toggle="tab"
+                                            data-bs-target="#development"
+                                            type="button"
+                                            role="tab"
+                                            aria-controls="development"
+                                            aria-selected="true">
+                                        Разработка
+                                    </button>
+
+                                    <button class="nav-link"
+                                            id="infrastructure-tab"
+                                            data-bs-toggle="tab"
+                                            data-bs-target="#infrastructure"
+                                            type="button"
+                                            role="tab"
+                                            aria-controls="infrastructure"
+                                            aria-selected="false">
+                                        Инфраструктура
+                                    </button>
+
+                                    <button class="nav-link"
+                                            id="security-tab"
+                                            data-bs-toggle="tab"
+                                            data-bs-target="#security"
+                                            type="button"
+                                            role="tab"
+                                            aria-controls="security"
+                                            aria-selected="false">
+                                        Безопасность
+                                    </button>
+
+                                    <button class="nav-link"
+                                            id="business-tab"
+                                            data-bs-toggle="tab"
+                                            data-bs-target="#business"
+                                            type="button"
+                                            role="tab"
+                                            aria-controls="business"
+                                            aria-selected="false">
+                                        Бизнес
+                                    </button>
+
+                                </div>
+                            </div>
+
+                            <!-- Правая колонка: содержимое -->
+                            <div class="lg:col-10">
+                                <div class="tab-content" id="catalogTabsContent">
+
+                                    <!-- Разработка -->
+                                    <div class="tab-pane show active"
+                                        id="development"
+                                        role="tabpanel"
+                                        aria-labelledby="development-tab"
+                                        tabindex="0">
+
+                                        <div class="row g-4">
+
+                                            <div class="lg:col-6">
+                                                <h6 class="fw-medium mb-4">
+                                                    Программное обеспечение
+                                                </h6>
+
+                                                <div class="row g-3">
+                                                    <div class="lg:col-6">
+                                                        <div class="d-flex flex-column gap-3">
+                                                            <a href="#">Разработка</a>
+                                                            <a href="#">Контейнеризация/Микросервисы</a>
+                                                            <a href="#">Гибкое управление жизненным циклом</a>
+                                                            <a href="#">Тестирование</a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="lg:col-6">
+                                                        <div class="d-flex flex-column gap-3">
+                                                            <a href="#">DevOps</a>
+                                                            <a href="#">Машинное обучение</a>
+                                                            <a href="#">Сотрудничество</a>
+                                                            <a href="#">Мониторинг</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="lg:col-3">
+                                                <h6 class="fw-medium mb-4">Услуги</h6>
+
+                                                <div class="d-flex flex-column gap-3">
+                                                    <a href="#">Оценки</a>
+                                                    <a href="#">Управляемые услуги</a>
+                                                    <a href="#">Выполнение</a>
+                                                    <a href="#">Премиум-поддержка</a>
+                                                </div>
+                                            </div>
+
+                                            <div class="lg:col-3">
+                                                <h6 class="fw-medium mb-4">
+                                                    Продукты для разработки
+                                                </h6>
+
+                                                <div class="row g-3">
+                                                    <div class="col-6">
+                                                        <a href="#"
+                                                        class="catalog-product border rounded-3 p-3 d-flex flex-column align-items-center text-center h-100">
+                                                            <span class="fw-bold mb-3">Dr.WEB</span>
+                                                            <span class="fs-xs">
+                                                                Раскройте потенциал для предприятия
+                                                            </span>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="col-6">
+                                                        <a href="#"
+                                                        class="catalog-product border rounded-3 p-3 d-flex flex-column align-items-center text-center h-100">
+                                                            <span class="fw-bold mb-3">Dr.WEB</span>
+                                                            <span class="fs-xs">
+                                                                Раскройте потенциал для предприятия
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <!-- Инфраструктура -->
+                                    <div class="tab-pane"
+                                        id="infrastructure"
+                                        role="tabpanel"
+                                        aria-labelledby="infrastructure-tab"
+                                        tabindex="0">
+
+                                        <div class="row g-4">
+                                            <div class="lg:col-4">
+                                                <h6 class="fw-medium mb-4">
+                                                    Инфраструктурные решения
+                                                </h6>
+                                                <div class="d-flex flex-column gap-3">
+                                                    <a href="#">Серверные решения</a>
+                                                    <a href="#">Системы хранения данных</a>
+                                                    <a href="#">Виртуализация</a>
+                                                </div>
+                                            </div>
+                                            <div class="lg:col-4">
+                                                <h6 class="fw-medium mb-4">Услуги</h6>
+                                                <div class="d-flex flex-column gap-3">
+                                                    <a href="#">Облачные решения</a>
+                                                    <a href="#">Мониторинг</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Безопасность -->
+                                    <div class="tab-pane"
+                                        id="security"
+                                        role="tabpanel"
+                                        aria-labelledby="security-tab"
+                                        tabindex="0">
+
+                                        <div class="row g-4">
+                                            <div class="lg:col-4">
+                                                <h6 class="fw-medium mb-4">
+                                                    Информационная безопасность
+                                                </h6>
+                                                <div class="d-flex flex-column gap-3">
+                                                    <a href="#">Антивирусная защита</a>
+                                                    <a href="#">Защита данных</a>
+                                                    <a href="#">Сетевая безопасность</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Бизнес -->
+                                    <div class="tab-pane"
+                                        id="business"
+                                        role="tabpanel"
+                                        aria-labelledby="business-tab"
+                                        tabindex="0">
+
+                                        <div class="row g-4">
+                                            <div class="lg:col-4">
+                                                <h6 class="fw-medium mb-4">
+                                                    Бизнес-решения
+                                                </h6>
+                                                <div class="d-flex flex-column gap-3">
+                                                    <a href="#">Автоматизация бизнеса</a>
+                                                    <a href="#">Корпоративные решения</a>
+                                                    <a href="#">Аналитика</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
         </nav>
     </header>
     <main>

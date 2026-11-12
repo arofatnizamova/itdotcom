@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" media="all">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -113,7 +114,18 @@
                                 <a class="nav-link active" aria-current="page" href="about.html">О компании</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="catalog.html">Каталог</a>
+                                <button
+                                    class="nav-link lg:d-block d-none"
+                                    type="button"
+                                    id="catalogMegaToggle"
+                                    aria-expanded="false"
+                                    aria-controls="catalogMegaMenu"
+                                >
+                                    Каталог
+                                </button>
+                                <a class="nav-link lg:d-none" href="catalog.html">
+                                    Каталог
+                                </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="vendors.html">Вендоры</a>
@@ -132,200 +144,489 @@
                     </div>
                 </dialog>
             </div>
+            <div id="catalogMegaMenu"
+                    class="catalog-mega position-absolute w-100 bg-main lg:d-block d-none"
+                    aria-label="Разделы каталога"
+                    hidden>
+
+                    <div class="container py-5">
+                        <div class="row g-5">
+
+                            <!-- Левая колонка: табы -->
+                            <div class="lg:col-2">
+                                <div class="nav nav-pills nav-pills-vertical gap-2"
+                                    id="catalogTabs"
+                                    role="tablist"
+                                    aria-orientation="vertical">
+
+                                    <button class="nav-link active"
+                                            id="development-tab"
+                                            data-bs-toggle="tab"
+                                            data-bs-target="#development"
+                                            type="button"
+                                            role="tab"
+                                            aria-controls="development"
+                                            aria-selected="true">
+                                        Разработка
+                                    </button>
+
+                                    <button class="nav-link"
+                                            id="infrastructure-tab"
+                                            data-bs-toggle="tab"
+                                            data-bs-target="#infrastructure"
+                                            type="button"
+                                            role="tab"
+                                            aria-controls="infrastructure"
+                                            aria-selected="false">
+                                        Инфраструктура
+                                    </button>
+
+                                    <button class="nav-link"
+                                            id="security-tab"
+                                            data-bs-toggle="tab"
+                                            data-bs-target="#security"
+                                            type="button"
+                                            role="tab"
+                                            aria-controls="security"
+                                            aria-selected="false">
+                                        Безопасность
+                                    </button>
+
+                                    <button class="nav-link"
+                                            id="business-tab"
+                                            data-bs-toggle="tab"
+                                            data-bs-target="#business"
+                                            type="button"
+                                            role="tab"
+                                            aria-controls="business"
+                                            aria-selected="false">
+                                        Бизнес
+                                    </button>
+
+                                </div>
+                            </div>
+
+                            <!-- Правая колонка: содержимое -->
+                            <div class="lg:col-10">
+                                <div class="tab-content" id="catalogTabsContent">
+
+                                    <!-- Разработка -->
+                                    <div class="tab-pane show active"
+                                        id="development"
+                                        role="tabpanel"
+                                        aria-labelledby="development-tab"
+                                        tabindex="0">
+
+                                        <div class="row g-4">
+
+                                            <div class="lg:col-6">
+                                                <h6 class="fw-medium mb-4">
+                                                    Программное обеспечение
+                                                </h6>
+
+                                                <div class="row g-3">
+                                                    <div class="lg:col-6">
+                                                        <div class="d-flex flex-column gap-3">
+                                                            <a href="#">Разработка</a>
+                                                            <a href="#">Контейнеризация/Микросервисы</a>
+                                                            <a href="#">Гибкое управление жизненным циклом</a>
+                                                            <a href="#">Тестирование</a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="lg:col-6">
+                                                        <div class="d-flex flex-column gap-3">
+                                                            <a href="#">DevOps</a>
+                                                            <a href="#">Машинное обучение</a>
+                                                            <a href="#">Сотрудничество</a>
+                                                            <a href="#">Мониторинг</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="lg:col-3">
+                                                <h6 class="fw-medium mb-4">Услуги</h6>
+
+                                                <div class="d-flex flex-column gap-3">
+                                                    <a href="#">Оценки</a>
+                                                    <a href="#">Управляемые услуги</a>
+                                                    <a href="#">Выполнение</a>
+                                                    <a href="#">Премиум-поддержка</a>
+                                                </div>
+                                            </div>
+
+                                            <div class="lg:col-3">
+                                                <h6 class="fw-medium mb-4">
+                                                    Продукты для разработки
+                                                </h6>
+
+                                                <div class="row g-3">
+                                                    <div class="col-6">
+                                                        <a href="#"
+                                                        class="catalog-product border rounded-3 p-3 d-flex flex-column align-items-center text-center h-100">
+                                                            <span class="fw-bold mb-3">Dr.WEB</span>
+                                                            <span class="fs-xs">
+                                                                Раскройте потенциал для предприятия
+                                                            </span>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="col-6">
+                                                        <a href="#"
+                                                        class="catalog-product border rounded-3 p-3 d-flex flex-column align-items-center text-center h-100">
+                                                            <span class="fw-bold mb-3">Dr.WEB</span>
+                                                            <span class="fs-xs">
+                                                                Раскройте потенциал для предприятия
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <!-- Инфраструктура -->
+                                    <div class="tab-pane"
+                                        id="infrastructure"
+                                        role="tabpanel"
+                                        aria-labelledby="infrastructure-tab"
+                                        tabindex="0">
+
+                                        <div class="row g-4">
+                                            <div class="lg:col-4">
+                                                <h6 class="fw-medium mb-4">
+                                                    Инфраструктурные решения
+                                                </h6>
+                                                <div class="d-flex flex-column gap-3">
+                                                    <a href="#">Серверные решения</a>
+                                                    <a href="#">Системы хранения данных</a>
+                                                    <a href="#">Виртуализация</a>
+                                                </div>
+                                            </div>
+                                            <div class="lg:col-4">
+                                                <h6 class="fw-medium mb-4">Услуги</h6>
+                                                <div class="d-flex flex-column gap-3">
+                                                    <a href="#">Облачные решения</a>
+                                                    <a href="#">Мониторинг</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Безопасность -->
+                                    <div class="tab-pane"
+                                        id="security"
+                                        role="tabpanel"
+                                        aria-labelledby="security-tab"
+                                        tabindex="0">
+
+                                        <div class="row g-4">
+                                            <div class="lg:col-4">
+                                                <h6 class="fw-medium mb-4">
+                                                    Информационная безопасность
+                                                </h6>
+                                                <div class="d-flex flex-column gap-3">
+                                                    <a href="#">Антивирусная защита</a>
+                                                    <a href="#">Защита данных</a>
+                                                    <a href="#">Сетевая безопасность</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Бизнес -->
+                                    <div class="tab-pane"
+                                        id="business"
+                                        role="tabpanel"
+                                        aria-labelledby="business-tab"
+                                        tabindex="0">
+
+                                        <div class="row g-4">
+                                            <div class="lg:col-4">
+                                                <h6 class="fw-medium mb-4">
+                                                    Бизнес-решения
+                                                </h6>
+                                                <div class="d-flex flex-column gap-3">
+                                                    <a href="#">Автоматизация бизнеса</a>
+                                                    <a href="#">Корпоративные решения</a>
+                                                    <a href="#">Аналитика</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
         </nav>
     </header>
-    <main>
-        <section class="banner-section position-relative d-flex align-items-center" style="background: url('images/about-page/banner-img.png') no-repeat center/cover;">
-            <div class="container position-relative z-1">
-                <div class="row">
-                    <div class="lg:col-5">
-                        <div class="banner-content lg:text-start text-center fg-white">
-                            <h1 class="text-xl mb-4 fw-bold text-uppercase">
-                                О КОМПАНИИ
-                            </h1>
+    
+<main>
+    <section class="banner-section position-relative d-flex align-items-center" style="background: url('images/about-page/banner-img.png') no-repeat center/cover;">
+        <div class="container position-relative z-1">
+            <div class="row">
+                <div class="lg:col-5">
+                    <div class="banner-content lg:text-start text-center fg-white">
+                        <h1 class="text-xl mb-4 fw-bold text-uppercase"
+                            data-aos="fade-up">
+                            О КОМПАНИИ
+                        </h1>
 
-                            <p class="text-sm  my-10">
-                                Мы предлагааем взаимовыгодные партнерские отношения всем, кто готов развиваться и шагать в ногу со временем
-                            </p>
+                        <p class="text-sm my-10"
+                           data-aos="fade-up"
+                           data-aos-delay="100">
+                            Мы предлагааем взаимовыгодные партнерские отношения всем, кто готов развиваться и шагать в ногу со временем
+                        </p>
 
-                            <a href="contacts.html" class="btn btn-light rounded-pill text-corp px-5 py-3">
-                                Связаться с нами
-                            </a>
-                        </div>
+                        <a href="contacts.html"
+                           class="btn btn-light rounded-pill text-corp px-5 py-3"
+                           data-aos="fade-up"
+                           data-aos-delay="200">
+                            Связаться с нами
+                        </a>
                     </div>
                 </div>
             </div>
-        </section>
-        <section class="py-12 ">
-            <div class="position-relative">
-                <img src="images/about-page/1.png" alt="" class="position-absolute rounded-end lg:d-block d-none start-0 h-100 w-50 top-0 object-fit-cover">
-                <img src="images/about-page/1.png" alt="" class="img-fluid object-fit-cover w-95 lg:d-none mb-10">
-                <div class="container lg:py-10">
-                    <div class="row justify-content-end">
-                        <div class="lg:col-5">
-                            <div class="w-100 lg:py-10 lg:text-start text-center">
-                                <h4 class="text-lg fw-semibold">
-                                    Кто такие партнеры?
-                                </h4>
-                                <p class="text-xs mt-10">
-                                    Это реселлеры, системные интеграторы и интернет-магазины, которые являются частью продаж программного обеспечения:
-                                    <br><br>
-                                    вендор – дистрибьютор – партнер – заказчик
-                                    <br><br>
+        </div>
+    </section>
 
-                                    Партнерская сеть ITDOTCOM постоянно развивается и на данный момент выражена в разбивке по странам ЦА.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="lg:py-10 pb-10">
-            <div class="container ">
-                <div class="row gy-5 border-bottom pb-12">
-                    <div class="lg:col-4">
-                        <div class="w-100 h-100 bg-corp text-white p-8 rounded-9">
-                            <h5 class="fw-semibold text-sm">
-                                История ITDOTCOM
-                            </h5>
-                            <p class="text-xs mb-0 mt-5 lg:me-12">
-                                Компания ITDOTCOM основана в 2017 году и активно развивается на рынке дистрибуции ПО и IT-сервисов в Центральной Азии
-                            </p>
-                        </div>
-                    </div>
-                    <div class="lg:col-4">
-                        <div class="w-100 h-100 bg-corp text-white p-8 rounded-9">
-                            <h5 class="fw-semibold text-sm">
-                                Миссия компании
-                            </h5>
-                            <p class="text-xs mb-0 mt-5 lg:me-12">
-                                ITDOTCOM стремится сделать программные продукты и сервисы доступными для каждого пользователя в странах присутствия
-                            </p>
-                        </div>
-                    </div>
-                    <div class="lg:col-4">
-                        <div class="w-100 h-100 bg-corp text-white p-8 rounded-9">
-                            <h5 class="fw-semibold text-sm">
-                                Наша цель
-                            </h5>
-                            <p class="text-xs mb-0 mt-5 lg:me-12">
-                                Развитие партнерской сети в Центральной Азии и построение онлайн-модели бизнеса с доступом к решениям и сервисам вендоров 24/7 в режиме реального времени
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="py-10 ">
-            <div class="container">
-                <h3 class="fs-3xl text-uppercase mb-12 lg:text-start text-center fw-bold text-corp">
-                    ITDOTCOM сегодня
-                </h3>
-            </div>
-            <img src="images/about-page/2.png" alt="" class="img-fluid object-fit-cover w-95 lg:d-none mb-10">
-            <div class="position-relative">
-                <img src="images/about-page/2.png" alt="" class="position-absolute rounded-end lg:d-block d-none start-0 h-100 w-50 top-0 object-fit-cover">
-                <div class="container">
-                    <div class="row justify-content-end">
-                        <div class="lg:col-5">
-                            <div class="w-100 lg:py-12">
-                                <div class="d-flex align-items-center mb-8 gap-8">
-                                    <div class=" p-5 bg-main rounded-circle">
-                                        <img src="icons/about-page/1.svg" alt="" class="icon-size-xs">
-                                    </div>
-                                    <h6 class="fs-lg lg:me-5 opacity-75 fw-light">
-                                        Прямых и эксклюзивных котрактов с вендорами
-                                    </h6>
-                                </div>
-                                <div class="d-flex align-items-center mb-8 gap-8">
-                                    <div class=" p-5 bg-main rounded-circle">
-                                        <img src="icons/about-page/2.svg" alt="" class="icon-size-xs">
-                                    </div>
-                                    <h6 class="fs-lg lg:me-5 opacity-75 fw-light">
-                                        Суб-дистрибьюторский портфель из более 100 производителей
-                                    </h6>
-                                </div>
-                                <div class="d-flex align-items-center mb-8 gap-8">
-                                    <div class=" p-5 bg-main rounded-circle">
-                                        <img src="icons/about-page/3.svg" alt="" class="icon-size-xs">
-                                    </div>
-                                    <h6 class="fs-lg lg:me-5 opacity-75 fw-light">
-                                        Инженерные ресурсы
-                                    </h6>
-                                </div>
-                                <div class="d-flex align-items-center mb-8 gap-8">
-                                    <div class=" p-5 bg-main rounded-circle">
-                                        <img src="icons/about-page/4.svg" alt="" class="icon-size-xs">
-                                    </div>
-                                    <h6 class="fs-lg lg:me-5 opacity-75 fw-light">
-                                        Партнерская сеть по всей Центральной Азии
-                                    </h6>
-                                </div>
-                                <div class="d-flex align-items-center mb-8 gap-8">
-                                    <div class=" p-5 bg-main rounded-circle">
-                                        <img src="icons/about-page/5.svg" alt="" class="icon-size-xs">
-                                    </div>
-                                    <h6 class="fs-lg lg:me-5 opacity-75 fw-light">
-                                        Электронная дистрибуция (запуск Market Place)
-                                    </h6>
-                                </div>
-                                <div class="d-flex align-items-center  gap-8">
-                                    <div class=" p-5 bg-main rounded-circle">
-                                        <img src="icons/about-page/6.svg" alt="" class="icon-size-xs">
-                                    </div>
-                                    <h6 class="fs-lg lg:me-5 opacity-75 fw-light">
-                                        Классическая дистрибуция
-                                    </h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="py-10">
+    <section class="py-12">
+        <div class="position-relative">
+            <img src="images/about-page/1.png" alt=""
+                 class="position-absolute rounded-end lg:d-block d-none start-0 h-100 w-50 top-0 object-fit-cover">
+
+            <img src="images/about-page/1.png" alt=""
+                 class="img-fluid object-fit-cover w-95 lg:d-none mb-10"
+                 data-aos="fade-up">
+
             <div class="container lg:py-10">
-                <h3 class="fs-3xl text-uppercase mb-12  fw-bold text-corp">
-                    Чем интересен ITDOTCOM <br> <span class="fs-2xl fw-normal">для партнеров?</span>
-                </h3>
-                <div class="advantages slick-slider">
-                    <div class="slider-item">
-                        <div class="w-100 h-100 px-3 d-flex flex-column">
-                            <img src="images/home-page/1.png" alt="" class="img-fluid">
-                            <p class="opacity-75 text-xs my-10">
-                                Цифровая платформа для парнероы с локализацией в странах Центральной Азии
-                            </p>
-                        </div>
-                    </div>
-                    <div class="slider-item">
-                        <div class="w-100 h-100 px-3 d-flex flex-column">
-                            <img src="images/home-page/2.png" alt="" class="img-fluid">
-                            <p class="opacity-75 text-xs my-10">
-                                Наличие субдистрибуторских договоров
-                            </p>
-                        </div>
-                    </div>
-                    <div class="slider-item">
-                        <div class="w-100 h-100 px-3 d-flex flex-column">
-                            <img src="images/home-page/3.png" alt="" class="img-fluid">
-                            <p class="opacity-75 text-xs my-10">
-                                Широкий ассортимент софта, в т.ч. экзотики, и IT-сервисов
-                            </p>
-                        </div>
-                    </div>
-                    <div class="slider-item">
-                        <div class="w-100 h-100 px-3 d-flex flex-column">
-                            <img src="images/home-page/3.png" alt="" class="img-fluid">
-                            <p class="opacity-75 text-xs my-10">
-                                Доступ к инженерным ресурсам вендоров
+                <div class="row justify-content-end">
+                    <div class="lg:col-5">
+                        <div class="w-100 lg:py-10 lg:text-start text-center"
+                             data-aos="fade-up">
+                            <h4 class="text-lg fw-semibold">
+                                Кто такие партнеры?
+                            </h4>
+
+                            <p class="text-xs mt-10">
+                                Это реселлеры, системные интеграторы и интернет-магазины, которые являются частью продаж программного обеспечения:
+                                <br><br>
+                                вендор – дистрибьютор – партнер – заказчик
+                                <br><br>
+                                Партнерская сеть ITDOTCOM постоянно развивается и на данный момент выражена в разбивке по странам ЦА.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <section class="lg:py-10 pb-10">
+        <div class="container">
+            <div class="row gy-5 border-bottom pb-12">
+
+                <div class="lg:col-4">
+                    <div class="w-100 h-100 bg-corp text-white p-8 rounded-9"
+                         data-aos="fade-up"
+                         data-aos-delay="0">
+                        <h5 class="fw-semibold text-sm">
+                            История ITDOTCOM
+                        </h5>
+
+                        <p class="text-xs mb-0 mt-5 lg:me-12">
+                            Компания ITDOTCOM основана в 2017 году и активно развивается на рынке дистрибуции ПО и IT-сервисов в Центральной Азии
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lg:col-4">
+                    <div class="w-100 h-100 bg-corp text-white p-8 rounded-9"
+                         data-aos="fade-up"
+                         data-aos-delay="100">
+                        <h5 class="fw-semibold text-sm">
+                            Миссия компании
+                        </h5>
+
+                        <p class="text-xs mb-0 mt-5 lg:me-12">
+                            ITDOTCOM стремится сделать программные продукты и сервисы доступными для каждого пользователя в странах присутствия
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lg:col-4">
+                    <div class="w-100 h-100 bg-corp text-white p-8 rounded-9"
+                         data-aos="fade-up"
+                         data-aos-delay="200">
+                        <h5 class="fw-semibold text-sm">
+                            Наша цель
+                        </h5>
+
+                        <p class="text-xs mb-0 mt-5 lg:me-12">
+                            Развитие партнерской сети в Центральной Азии и построение онлайн-модели бизнеса с доступом к решениям и сервисам вендоров 24/7 в режиме реального времени
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-10">
+        <div class="container">
+            <h3 class="fs-3xl text-uppercase mb-12 lg:text-start text-center fw-bold text-corp"
+                data-aos="fade-up">
+                ITDOTCOM сегодня
+            </h3>
+        </div>
+
+        <img src="images/about-page/2.png" alt=""
+             class="img-fluid object-fit-cover w-95 lg:d-none mb-10"
+             data-aos="fade-up">
+
+        <div class="position-relative">
+            <img src="images/about-page/2.png" alt=""
+                 class="position-absolute rounded-end lg:d-block d-none start-0 h-100 w-50 top-0 object-fit-cover">
+
+            <div class="container">
+                <div class="row justify-content-end">
+                    <div class="lg:col-5">
+                        <div class="w-100 lg:py-12">
+
+                            <div class="d-flex align-items-center mb-8 gap-8"
+                                 data-aos="fade-up"
+                                 data-aos-delay="0">
+                                <div class="p-5 bg-main rounded-circle">
+                                    <img src="icons/about-page/1.svg" alt="" class="icon-size-xs">
+                                </div>
+                                <h6 class="fs-lg lg:me-5 opacity-75 fw-light">
+                                    Прямых и эксклюзивных котрактов с вендорами
+                                </h6>
+                            </div>
+
+                            <div class="d-flex align-items-center mb-8 gap-8"
+                                 data-aos="fade-up"
+                                 data-aos-delay="100">
+                                <div class="p-5 bg-main rounded-circle">
+                                    <img src="icons/about-page/2.svg" alt="" class="icon-size-xs">
+                                </div>
+                                <h6 class="fs-lg lg:me-5 opacity-75 fw-light">
+                                    Суб-дистрибьюторский портфель из более 100 производителей
+                                </h6>
+                            </div>
+
+                            <div class="d-flex align-items-center mb-8 gap-8"
+                                 data-aos="fade-up"
+                                 data-aos-delay="200">
+                                <div class="p-5 bg-main rounded-circle">
+                                    <img src="icons/about-page/3.svg" alt="" class="icon-size-xs">
+                                </div>
+                                <h6 class="fs-lg lg:me-5 opacity-75 fw-light">
+                                    Инженерные ресурсы
+                                </h6>
+                            </div>
+
+                            <div class="d-flex align-items-center mb-8 gap-8"
+                                 data-aos="fade-up"
+                                 data-aos-delay="0">
+                                <div class="p-5 bg-main rounded-circle">
+                                    <img src="icons/about-page/4.svg" alt="" class="icon-size-xs">
+                                </div>
+                                <h6 class="fs-lg lg:me-5 opacity-75 fw-light">
+                                    Партнерская сеть по всей Центральной Азии
+                                </h6>
+                            </div>
+
+                            <div class="d-flex align-items-center mb-8 gap-8"
+                                 data-aos="fade-up"
+                                 data-aos-delay="100">
+                                <div class="p-5 bg-main rounded-circle">
+                                    <img src="icons/about-page/5.svg" alt="" class="icon-size-xs">
+                                </div>
+                                <h6 class="fs-lg lg:me-5 opacity-75 fw-light">
+                                    Электронная дистрибуция (запуск Market Place)
+                                </h6>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-8"
+                                 data-aos="fade-up"
+                                 data-aos-delay="200">
+                                <div class="p-5 bg-main rounded-circle">
+                                    <img src="icons/about-page/6.svg" alt="" class="icon-size-xs">
+                                </div>
+                                <h6 class="fs-lg lg:me-5 opacity-75 fw-light">
+                                    Классическая дистрибуция
+                                </h6>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-10">
+        <div class="container lg:py-10">
+            <h3 class="fs-3xl text-uppercase mb-12 fw-bold text-corp"
+                data-aos="fade-up">
+                Чем интересен ITDOTCOM
+                <br>
+                <span class="fs-2xl fw-normal">
+                    для партнеров?
+                </span>
+            </h3>
+
+            <div class="advantages slick-slider"
+                 data-aos="fade-up"
+                 data-aos-delay="100">
+
+                <div class="slider-item">
+                    <div class="w-100 h-100 px-3 d-flex flex-column">
+                        <img src="images/home-page/1.png" alt="" class="img-fluid">
+                        <p class="opacity-75 text-xs my-10">
+                            Цифровая платформа для парнероы с локализацией в странах Центральной Азии
+                        </p>
+                    </div>
+                </div>
+
+                <div class="slider-item">
+                    <div class="w-100 h-100 px-3 d-flex flex-column">
+                        <img src="images/home-page/2.png" alt="" class="img-fluid">
+                        <p class="opacity-75 text-xs my-10">
+                            Наличие субдистрибуторских договоров
+                        </p>
+                    </div>
+                </div>
+
+                <div class="slider-item">
+                    <div class="w-100 h-100 px-3 d-flex flex-column">
+                        <img src="images/home-page/3.png" alt="" class="img-fluid">
+                        <p class="opacity-75 text-xs my-10">
+                            Широкий ассортимент софта, в т.ч. экзотики, и IT-сервисов
+                        </p>
+                    </div>
+                </div>
+
+                <div class="slider-item">
+                    <div class="w-100 h-100 px-3 d-flex flex-column">
+                        <img src="images/home-page/3.png" alt="" class="img-fluid">
+                        <p class="opacity-75 text-xs my-10">
+                            Доступ к инженерным ресурсам вендоров
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+
     <footer class="bg-corp py-10 text-white">
         <div class="container lg:py-10">
             <div class="row gy-10">
@@ -400,7 +701,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js "></script>
     <script src="https://kit.fontawesome.com/f817facf9f.js " crossorigin="anonymous "></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js "></script> px-3
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js "></script> 
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="main.js"></script>
 </body>
 

@@ -136,4 +136,60 @@ $(document).ready(function () {
 
         slider.slick($.extend({}, options, extraOptions));
     });
+    const $toggle = $('#catalogMegaToggle');
+    const $menu = $('#catalogMegaMenu');
+
+    if (!$toggle.length || !$menu.length) return;
+
+    function closeMenu() {
+        $menu.prop('hidden', true);
+        $toggle.attr('aria-expanded', 'false');
+    }
+
+    function openMenu() {
+        $menu.prop('hidden', false);
+        $toggle.attr('aria-expanded', 'true');
+    }
+
+    // Открытие и закрытие по клику на «Каталог»
+    $toggle.on('click', function () {
+        if ($menu.prop('hidden')) {
+            openMenu();
+        } else {
+            closeMenu();
+        }
+    });
+
+    // Закрытие при клике вне мегаменю
+    $(document).on('click', function (e) {
+        if (!$(e.target).closest('#catalogMegaMenu, #catalogMegaToggle').length) {
+            closeMenu();
+        }
+    });
+
+    // Закрытие по Escape
+    $(document).on('keydown', function (e) {
+        if (e.key === 'Escape' && !$menu.prop('hidden')) {
+            closeMenu();
+            $toggle.trigger('focus');
+        }
+    });
+
+    // Закрытие при переходе на мобильную версию
+    $(window).on('resize', function () {
+        if (window.innerWidth < 992) {
+            closeMenu();
+        }
+    });
+    AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 80,
+        delay: 0,
+        mirror: false,
+        disable: function () {
+            return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        }
+    });
 });

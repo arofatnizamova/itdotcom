@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" media="all">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -113,7 +114,18 @@
                                 <a class="nav-link active" aria-current="page" href="about.html">О компании</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="catalog.html">Каталог</a>
+                                <button
+                                    class="nav-link lg:d-block d-none"
+                                    type="button"
+                                    id="catalogMegaToggle"
+                                    aria-expanded="false"
+                                    aria-controls="catalogMegaMenu"
+                                >
+                                    Каталог
+                                </button>
+                                <a class="nav-link lg:d-none" href="catalog.html">
+                                    Каталог
+                                </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="vendors.html">Вендоры</a>
@@ -132,94 +144,353 @@
                     </div>
                 </dialog>
             </div>
+            <div id="catalogMegaMenu"
+                    class="catalog-mega position-absolute w-100 bg-main lg:d-block d-none"
+                    aria-label="Разделы каталога"
+                    hidden>
+
+                    <div class="container py-5">
+                        <div class="row g-5">
+
+                            <!-- Левая колонка: табы -->
+                            <div class="lg:col-2">
+                                <div class="nav nav-pills nav-pills-vertical gap-2"
+                                    id="catalogTabs"
+                                    role="tablist"
+                                    aria-orientation="vertical">
+
+                                    <button class="nav-link active"
+                                            id="development-tab"
+                                            data-bs-toggle="tab"
+                                            data-bs-target="#development"
+                                            type="button"
+                                            role="tab"
+                                            aria-controls="development"
+                                            aria-selected="true">
+                                        Разработка
+                                    </button>
+
+                                    <button class="nav-link"
+                                            id="infrastructure-tab"
+                                            data-bs-toggle="tab"
+                                            data-bs-target="#infrastructure"
+                                            type="button"
+                                            role="tab"
+                                            aria-controls="infrastructure"
+                                            aria-selected="false">
+                                        Инфраструктура
+                                    </button>
+
+                                    <button class="nav-link"
+                                            id="security-tab"
+                                            data-bs-toggle="tab"
+                                            data-bs-target="#security"
+                                            type="button"
+                                            role="tab"
+                                            aria-controls="security"
+                                            aria-selected="false">
+                                        Безопасность
+                                    </button>
+
+                                    <button class="nav-link"
+                                            id="business-tab"
+                                            data-bs-toggle="tab"
+                                            data-bs-target="#business"
+                                            type="button"
+                                            role="tab"
+                                            aria-controls="business"
+                                            aria-selected="false">
+                                        Бизнес
+                                    </button>
+
+                                </div>
+                            </div>
+
+                            <!-- Правая колонка: содержимое -->
+                            <div class="lg:col-10">
+                                <div class="tab-content" id="catalogTabsContent">
+
+                                    <!-- Разработка -->
+                                    <div class="tab-pane show active"
+                                        id="development"
+                                        role="tabpanel"
+                                        aria-labelledby="development-tab"
+                                        tabindex="0">
+
+                                        <div class="row g-4">
+
+                                            <div class="lg:col-6">
+                                                <h6 class="fw-medium mb-4">
+                                                    Программное обеспечение
+                                                </h6>
+
+                                                <div class="row g-3">
+                                                    <div class="lg:col-6">
+                                                        <div class="d-flex flex-column gap-3">
+                                                            <a href="#">Разработка</a>
+                                                            <a href="#">Контейнеризация/Микросервисы</a>
+                                                            <a href="#">Гибкое управление жизненным циклом</a>
+                                                            <a href="#">Тестирование</a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="lg:col-6">
+                                                        <div class="d-flex flex-column gap-3">
+                                                            <a href="#">DevOps</a>
+                                                            <a href="#">Машинное обучение</a>
+                                                            <a href="#">Сотрудничество</a>
+                                                            <a href="#">Мониторинг</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="lg:col-3">
+                                                <h6 class="fw-medium mb-4">Услуги</h6>
+
+                                                <div class="d-flex flex-column gap-3">
+                                                    <a href="#">Оценки</a>
+                                                    <a href="#">Управляемые услуги</a>
+                                                    <a href="#">Выполнение</a>
+                                                    <a href="#">Премиум-поддержка</a>
+                                                </div>
+                                            </div>
+
+                                            <div class="lg:col-3">
+                                                <h6 class="fw-medium mb-4">
+                                                    Продукты для разработки
+                                                </h6>
+
+                                                <div class="row g-3">
+                                                    <div class="col-6">
+                                                        <a href="#"
+                                                        class="catalog-product border rounded-3 p-3 d-flex flex-column align-items-center text-center h-100">
+                                                            <span class="fw-bold mb-3">Dr.WEB</span>
+                                                            <span class="fs-xs">
+                                                                Раскройте потенциал для предприятия
+                                                            </span>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="col-6">
+                                                        <a href="#"
+                                                        class="catalog-product border rounded-3 p-3 d-flex flex-column align-items-center text-center h-100">
+                                                            <span class="fw-bold mb-3">Dr.WEB</span>
+                                                            <span class="fs-xs">
+                                                                Раскройте потенциал для предприятия
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <!-- Инфраструктура -->
+                                    <div class="tab-pane"
+                                        id="infrastructure"
+                                        role="tabpanel"
+                                        aria-labelledby="infrastructure-tab"
+                                        tabindex="0">
+
+                                        <div class="row g-4">
+                                            <div class="lg:col-4">
+                                                <h6 class="fw-medium mb-4">
+                                                    Инфраструктурные решения
+                                                </h6>
+                                                <div class="d-flex flex-column gap-3">
+                                                    <a href="#">Серверные решения</a>
+                                                    <a href="#">Системы хранения данных</a>
+                                                    <a href="#">Виртуализация</a>
+                                                </div>
+                                            </div>
+                                            <div class="lg:col-4">
+                                                <h6 class="fw-medium mb-4">Услуги</h6>
+                                                <div class="d-flex flex-column gap-3">
+                                                    <a href="#">Облачные решения</a>
+                                                    <a href="#">Мониторинг</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Безопасность -->
+                                    <div class="tab-pane"
+                                        id="security"
+                                        role="tabpanel"
+                                        aria-labelledby="security-tab"
+                                        tabindex="0">
+
+                                        <div class="row g-4">
+                                            <div class="lg:col-4">
+                                                <h6 class="fw-medium mb-4">
+                                                    Информационная безопасность
+                                                </h6>
+                                                <div class="d-flex flex-column gap-3">
+                                                    <a href="#">Антивирусная защита</a>
+                                                    <a href="#">Защита данных</a>
+                                                    <a href="#">Сетевая безопасность</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Бизнес -->
+                                    <div class="tab-pane"
+                                        id="business"
+                                        role="tabpanel"
+                                        aria-labelledby="business-tab"
+                                        tabindex="0">
+
+                                        <div class="row g-4">
+                                            <div class="lg:col-4">
+                                                <h6 class="fw-medium mb-4">
+                                                    Бизнес-решения
+                                                </h6>
+                                                <div class="d-flex flex-column gap-3">
+                                                    <a href="#">Автоматизация бизнеса</a>
+                                                    <a href="#">Корпоративные решения</a>
+                                                    <a href="#">Аналитика</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
         </nav>
     </header>
-    <main>
-        <section class="banner-section position-relative d-flex align-items-center" style="background: url('images/vendors-page/banner-img.png') no-repeat center/cover;">
-            <div class="container position-relative z-1">
-                <div class="row">
-                    <div class="lg:col-5">
-                        <div class="banner-content lg:text-start text-center fg-white">
-                            <h1 class="text-xl mb-4 fw-bold text-uppercase">
-                                ВЕНДОРЫ
-                            </h1>
+    
+<main>
+    <section class="banner-section position-relative d-flex align-items-center" style="background: url('images/vendors-page/banner-img.png') no-repeat center/cover;">
+        <div class="container position-relative z-1">
+            <div class="row">
+                <div class="lg:col-5">
+                    <div class="banner-content lg:text-start text-center fg-white">
+                        <h1 class="text-xl mb-4 fw-bold text-uppercase"
+                            data-aos="fade-up">
+                            ВЕНДОРЫ
+                        </h1>
 
-                            <p class="text-sm  my-10">
-                                Мы предлагаем взаимовыгодные партнерские отношения всем, кто готов развиваться и шагать в ногу со временем!
-                            </p>
+                        <p class="text-sm my-10"
+                           data-aos="fade-up"
+                           data-aos-delay="100">
+                            Мы предлагаем взаимовыгодные партнерские отношения всем, кто готов развиваться и шагать в ногу со временем!
+                        </p>
 
-                            <a href="contacts.html" class="btn btn-light rounded-pill text-corp px-5 py-3">
-                                Связаться с нами
-                            </a>
-                        </div>
+                        <a href="contacts.html"
+                           class="btn btn-light rounded-pill text-corp px-5 py-3"
+                           data-aos="fade-up"
+                           data-aos-delay="200">
+                            Связаться с нами
+                        </a>
                     </div>
                 </div>
             </div>
-        </section>
-        <section class="py-10">
-            <div class="position-relative">
-                <img src="images/vendors-page/1.png" alt="" class="img-fluid vendors-img object-fit-cover">
-                <div class="info-container bg-main lg:p-12 p-8 position-absolute z-2">
-                    <h4 class="fs-2xl fw-semibold">
-                        Кто такие <br> вендоры?
-                    </h4>
-                    <p class="mt-10 text-xs lg:pe-12">
-                        Это компании, разрабатывающие, производящие и поставляющие программные продукты или услуги под своей торговой маркой
-                        <br><br>
-                        ITDOTCOM регулярно проводит переговоры с вендорами и пополняет портфель решений. Сейчас мы представляем следующих вендоров:
-                    </p>
-                </div>
-            </div>
-            <div class="container lg:py-10 mt-10">
-                <div class="row gy-10">
-                    <div class="lg:col-3">
-                        <div class="w-100 bg-main px-5 py-10 rounded-8 d-flex align-items-center justify-content-center">
-                            <img src="icons/vendors/1.svg" alt="" class="img-fluid vendor-img">
-                        </div>
-                    </div>
-                    <div class="lg:col-3">
-                        <div class="w-100 bg-main px-5 py-10 rounded-8 d-flex align-items-center justify-content-center">
-                            <img src="icons/vendors/2.svg" alt="" class="img-fluid vendor-img">
-                        </div>
-                    </div>
-                    <div class="lg:col-3">
-                        <div class="w-100 bg-main px-5 py-10 rounded-8 d-flex align-items-center justify-content-center">
-                            <img src="icons/vendors/3.svg" alt="" class="img-fluid vendor-img">
-                        </div>
-                    </div>
-                    <div class="lg:col-3">
-                        <div class="w-100 bg-main px-5 py-10 rounded-8 d-flex align-items-center justify-content-center">
-                            <img src="icons/vendors/4.svg" alt="" class="img-fluid vendor-img">
-                        </div>
-                    </div>
-                    <div class="lg:col-3">
-                        <div class="w-100 bg-main px-5 py-10 rounded-8 d-flex align-items-center justify-content-center">
-                            <img src="icons/vendors/5.svg" alt="" class="img-fluid vendor-img">
-                        </div>
-                    </div>
-                    <div class="lg:col-3">
-                        <div class="w-100 bg-main px-5 py-10 rounded-8 d-flex align-items-center justify-content-center">
-                            <img src="icons/vendors/6.svg" alt="" class="img-fluid vendor-img">
-                        </div>
-                    </div>
-                    <div class="lg:col-3">
-                        <div class="w-100 bg-main px-5 py-10 rounded-8 d-flex align-items-center justify-content-center">
-                            <img src="icons/vendors/7.svg" alt="" class="img-fluid vendor-img">
-                        </div>
-                    </div>
-                    <div class="lg:col-3">
-                        <div class="w-100 bg-main px-5 py-10 rounded-8 d-flex align-items-center justify-content-center">
-                            <img src="icons/vendors/8.svg" alt="" class="img-fluid vendor-img">
-                        </div>
-                    </div>
+        </div>
+    </section>
 
-                </div>
-                <a href="#" class="d-block text-center mt-10">
-                    Показать еще
-                </a>
+    <section class="py-10">
+        <div class="position-relative">
+            <img src="images/vendors-page/1.png" alt=""
+                 class="img-fluid vendors-img object-fit-cover">
+
+            <div class="info-container bg-main lg:p-12 p-8 position-absolute z-2">
+                <h4 class="fs-2xl fw-semibold">
+                    Кто такие <br> вендоры?
+                </h4>
+
+                <p class="mt-10 text-xs lg:pe-12">
+                    Это компании, разрабатывающие, производящие и поставляющие программные продукты или услуги под своей торговой маркой
+                    <br><br>
+                    ITDOTCOM регулярно проводит переговоры с вендорами и пополняет портфель решений. Сейчас мы представляем следующих вендоров:
+                </p>
             </div>
-        </section>
-    </main>
+        </div>
+
+        <div class="container lg:py-10 mt-10">
+            <div class="row gy-10">
+
+                <div class="lg:col-3"
+                data-aos="fade-up"
+                     data-aos-delay="100">
+                    <div class="w-100 bg-main px-5 py-10 rounded-8 d-flex align-items-center justify-content-center">
+                        <img src="icons/vendors/1.svg" alt="" class="img-fluid vendor-img">
+                    </div>
+                </div>
+
+                <div class="lg:col-3"
+                     data-aos="fade-up"
+                     data-aos-delay="100">
+                    <div class="w-100 bg-main px-5 py-10 rounded-8 d-flex align-items-center justify-content-center">
+                        <img src="icons/vendors/2.svg" alt="" class="img-fluid vendor-img">
+                    </div>
+                </div>
+
+                <div class="lg:col-3"
+                     data-aos="fade-up"
+                     data-aos-delay="200">
+                    <div class="w-100 bg-main px-5 py-10 rounded-8 d-flex align-items-center justify-content-center">
+                        <img src="icons/vendors/3.svg" alt="" class="img-fluid vendor-img">
+                    </div>
+                </div>
+
+                <div class="lg:col-3"
+                     data-aos="fade-up"
+                     data-aos-delay="300">
+                    <div class="w-100 bg-main px-5 py-10 rounded-8 d-flex align-items-center justify-content-center">
+                        <img src="icons/vendors/4.svg" alt="" class="img-fluid vendor-img">
+                    </div>
+                </div>
+
+                <div class="lg:col-3"
+                     data-aos="fade-up"
+                     data-aos-delay="0">
+                    <div class="w-100 bg-main px-5 py-10 rounded-8 d-flex align-items-center justify-content-center">
+                        <img src="icons/vendors/5.svg" alt="" class="img-fluid vendor-img">
+                    </div>
+                </div>
+
+                <div class="lg:col-3"
+                     data-aos="fade-up"
+                     data-aos-delay="100">
+                    <div class="w-100 bg-main px-5 py-10 rounded-8 d-flex align-items-center justify-content-center">
+                        <img src="icons/vendors/6.svg" alt="" class="img-fluid vendor-img">
+                    </div>
+                </div>
+
+                <div class="lg:col-3"
+                     data-aos="fade-up"
+                     data-aos-delay="200">
+                    <div class="w-100 bg-main px-5 py-10 rounded-8 d-flex align-items-center justify-content-center">
+                        <img src="icons/vendors/7.svg" alt="" class="img-fluid vendor-img">
+                    </div>
+                </div>
+
+                <div class="lg:col-3"
+                     data-aos="fade-up"
+                     data-aos-delay="300">
+                    <div class="w-100 bg-main px-5 py-10 rounded-8 d-flex align-items-center justify-content-center">
+                        <img src="icons/vendors/8.svg" alt="" class="img-fluid vendor-img">
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="#"
+               class="d-block text-center mt-10"
+               data-aos="fade-up">
+                Показать еще
+            </a>
+        </div>
+    </section>
+</main>
+
     <footer class="bg-corp py-10 text-white">
         <div class="container lg:py-10">
             <div class="row gy-10">
@@ -294,7 +565,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js "></script>
     <script src="https://kit.fontawesome.com/f817facf9f.js " crossorigin="anonymous "></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js "></script> px-3
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js "></script> 
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="main.js"></script>
 </body>
 
