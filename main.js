@@ -192,4 +192,61 @@ $(document).ready(function () {
             return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         }
     });
+
+const $counters = $('.counter');
+
+if ($counters.length) {
+    const reduceMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+    function animateCounter(element) {
+        const $counter = $(element);
+
+        if ($counter.data('animated')) return;
+
+        $counter.data('animated', true);
+
+        const start = Number($counter.attr('data-start')) || 0;
+        const target = Number($counter.attr('data-target')) || 0;
+        const suffix = $counter.attr('data-suffix') || '';
+
+        if (reduceMotion) {
+            $counter.text(target + suffix);
+            return;
+        }
+
+        $({ value: start }).animate(
+            { value: target },
+            {
+                duration: 1800,
+                easing: 'swing',
+
+                step: function (now) {
+                    $counter.text(Math.floor(now) + suffix);
+                },
+
+                complete: function () {
+                    $counter.text(target + suffix);
+                }
+            }
+        );
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    $counters.each(function () {
+        observer.observe(this);
+    });
+}
+
 });
